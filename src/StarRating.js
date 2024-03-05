@@ -44,7 +44,7 @@ export default function StarRating({
     lineHeight: "1",
     margin: "0",
     color,
-    fontSize: `${size / 1.5}px`,
+    fontSize: `${size / 1.5}`,
   };
 
   function handleRating(rating) {
@@ -62,7 +62,7 @@ export default function StarRating({
               onHoverIn={() => setTempRating(i + 1)}
               onHoverOut={() => setTempRating(0)}
               color={color}
-              size={size}
+              size={textStyle.fontSize}
             />
           </span>
         ))}
