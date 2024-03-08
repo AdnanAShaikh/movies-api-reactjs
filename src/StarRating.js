@@ -4,18 +4,11 @@ import PropTypes from "prop-types";
 const containerStyle = {
   display: "flex",
   alignItems: "center",
-  gap: "14px",
+  gap: "16px",
 };
 
 const starContainerStyle = {
   display: "flex",
-};
-
-const starStyle = {
-  width: "48px",
-  height: "48px",
-  display: "block",
-  cursor: "pointer",
 };
 
 StarRating.propTypes = {
@@ -52,7 +45,7 @@ export default function StarRating({
     onSetRating(rating);
   }
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
           <span>
@@ -62,7 +55,7 @@ export default function StarRating({
               onHoverIn={() => setTempRating(i + 1)}
               onHoverOut={() => setTempRating(0)}
               color={color}
-              size={textStyle.fontSize}
+              size={size}
             />
           </span>
         ))}
@@ -77,6 +70,12 @@ export default function StarRating({
 }
 
 export function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
+  const starStyle = {
+    width: `${size}px`,
+    height: `${size}px`,
+    display: "block",
+    cursor: "pointer",
+  };
   return (
     <span
       role="button"
