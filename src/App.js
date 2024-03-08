@@ -66,6 +66,7 @@ export default function App() {
         setError("");
         return;
       }
+      onCloseMovie();
       fetchMovies();
 
       return function () {
@@ -261,6 +262,21 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     Director: director,
     Genre: genre,
   } = movie;
+
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.code === "Escape") onCloseMovie();
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onCloseMovie]
+  );
 
   useEffect(
     function () {
