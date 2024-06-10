@@ -26,54 +26,20 @@ body {
 
   color: var(--color-text);
   background-color: var(--color-background-900);
-  padding: 2.4rem;
+  /* padding: 2.4rem; */
 }
 
 /* ******* */
 
 .nav-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  height: 7.2rem;
-  padding: 0 3.2rem;
-  background-color: var(--color-primary);
-  border-radius: 0.9rem;
-  /* row-gap: 0.2rem; */
-}
-
-.main {
-  margin-top: 2.4rem;
-  height: calc(100vh - 7.2rem - 3 * 2.4rem);
   display: flex;
-  gap: 2.4rem;
+  align-content: center;
   justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  background-color: #6741d9;
+  padding: 1rem;
 }
-
-.box {
-  width: 42rem;
-  max-width: 42rem;
-  background-color: var(--color-background-500);
-  border-radius: 0.9rem;
-  overflow: scroll;
-  position: relative;
-}
-
-.loader {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 4.8rem;
-}
-
-.error {
-  text-align: center;
-  font-size: 2rem;
-  padding: 4.8rem;
-}
-
-/* ******* */
 
 .logo {
   display: flex;
@@ -116,9 +82,46 @@ body {
 }
 
 .num-results {
-  justify-self: end;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
   font-size: 1.8rem;
 }
+
+.main {
+  margin-top: 2.4rem;
+  /* height: calc(100vh - 7.2rem - 3 * 2.4rem); */
+  height: 90vh;
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+}
+
+.box {
+  width: 42rem;
+  max-width: 42rem;
+  background-color: var(--color-background-500);
+  border-radius: 0.9rem;
+  overflow: scroll;
+  position: relative;
+}
+
+.loader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 4.8rem;
+}
+
+.error {
+  text-align: center;
+  font-size: 2rem;
+  padding: 4.8rem;
+}
+
+/* ******* */
 
 .btn-toggle {
   position: absolute;
@@ -138,12 +141,13 @@ body {
 
 .list {
   list-style: none;
-  padding: 0.8rem 0;
+  padding: 0.8rem;
   overflow: scroll;
 }
 
 .list-watched {
   height: calc(100% - 9rem);
+  height: 80%;
 }
 
 .list li {
@@ -169,7 +173,7 @@ body {
 }
 
 .list img {
-  width: 100%;
+  width: 90%;
   grid-row: 1 / -1;
 }
 
@@ -346,13 +350,108 @@ body {
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 945px) {
-  .logo h1 {
-    display: none;
+@media only screen and (min-width: 1024px) {
+  /* No changes needed here if base styles are already optimized for larger screens */
+}
+
+/* Tablet landscape and desktop view */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav-bar {
+    gap: 2rem;
+  }
+
+  .main {
+    gap: 1.6rem;
+  }
+
+  .box {
+    width: 48rem;
+    max-width: 48rem;
+  }
+
+  .details img {
+    width: 45%;
   }
 }
 
-@media only screen and (max-width: 571px) {
+/* Mobile portrait view */
+
+@media (max-width: 600px) {
+  .btn-toggle {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-bar {
+    flex-direction: column;
+    align-content: start;
+  }
+
+  .logo {
+    display: flex;
+    font-size: 1rem;
+  }
+
+  .logo span,
+  .logo h1 {
+    margin-bottom: 0.2rem;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .box {
+    width: 32rem;
+    max-width: 32rem;
+  }
+
+  .btn-toggle {
+    top: 0.4rem;
+    right: 0.4rem;
+  }
+
+  .list {
+    padding: 0.4rem;
+  }
+
+  .list li {
+    padding: 1rem;
+  }
+
+  .details img {
+    width: 60%; /* Increase image width for better fit on mobile */
+  }
+
+  .details-overview {
+    padding: 1.6rem; /* Reduce padding for overview section on mobile */
+  }
+
+  .rating {
+    padding: 1rem; /* Reduce padding for rating section on mobile */
+  }
+
+  .seconds {
+    width: 14rem; /* Adjust seconds counter width for mobile */
+    padding: 0.2rem; /* Reduce padding for seconds counter on mobile */
+  }
+}
+
+/* @media only screen and (max-width: 945px) {
+  .logo h1 {
+    display: none;
+  }
+} */
+
+/* @media only screen and (max-width: 571px) {
   .box {
     width: 16rem;
     max-width: 16rem;
@@ -361,6 +460,14 @@ body {
   .search {
     width: 23rem;
   }
+  .num-results {
+    display: block;
+  }
+
+  .list li {
+    size: 1rem;
+    padding: 1rem;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -368,7 +475,8 @@ body {
     font-size: 12px;
     gap: 1rem;
   }
-}
+} */
+
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
