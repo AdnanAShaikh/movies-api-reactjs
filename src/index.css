@@ -39,6 +39,7 @@ body {
   padding: 0 3.2rem;
   background-color: var(--color-primary);
   border-radius: 0.9rem;
+  /* row-gap: 0.2rem; */
 }
 
 .main {
@@ -345,6 +346,29 @@ body {
   scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 945px) {
+  .logo h1 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 571px) {
+  .box {
+    width: 16rem;
+    max-width: 16rem;
+  }
+
+  .search {
+    width: 23rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .summary div {
+    font-size: 12px;
+    gap: 1rem;
+  }
+}
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
