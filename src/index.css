@@ -407,15 +407,24 @@ body {
   .main {
     flex-direction: column;
     gap: 1.2rem;
+    height: fit-content;
   }
-
+  .list,
   .box {
-    width: 32rem;
-    max-width: 32rem;
+    padding: 1rem;
+  }
+  .box {
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--color-background-500);
+    border-radius: 0.9rem;
+    overflow: scroll;
+    position: relative;
   }
 
   .btn-toggle {
-    top: 0.4rem;
+    /* top: 0.4rem; */
+    top: -0.6rem;
     right: 0.4rem;
   }
 
@@ -428,54 +437,52 @@ body {
   }
 
   .details img {
-    width: 60%; /* Increase image width for better fit on mobile */
+    width: 60%;
   }
 
   .details-overview {
-    padding: 1.6rem; /* Reduce padding for overview section on mobile */
+    padding: 1.6rem;
   }
 
   .rating {
-    padding: 1rem; /* Reduce padding for rating section on mobile */
+    padding: 1rem;
   }
 
   .seconds {
-    width: 14rem; /* Adjust seconds counter width for mobile */
-    padding: 0.2rem; /* Reduce padding for seconds counter on mobile */
+    width: 14rem;
+    padding: 0.2rem;
   }
-}
-
-/* @media only screen and (max-width: 945px) {
-  .logo h1 {
-    display: none;
-  }
-} */
-
-/* @media only screen and (max-width: 571px) {
-  .box {
-    width: 16rem;
-    max-width: 16rem;
+  .btn-toggle,
+  .btn-add,
+  .btn-back {
+    padding: 1rem; /* Increase padding for better touch targets */
+    font-size: 2rem; /* Larger font size for better visibility */
   }
 
-  .search {
-    width: 23rem;
-  }
-  .num-results {
-    display: block;
+  .btn-delete {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
   }
 
-  .list li {
-    size: 1rem;
-    padding: 1rem;
+  .logo span,
+  .logo h1,
+  .search::placeholder,
+  .num-results,
+  .list li,
+  .details h2,
+  .details-overview h2 {
+    font-size: 1.2rem; /* Slightly reduce font size for better readability */
   }
-}
+  .details img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
 
-@media only screen and (max-width: 800px) {
   .summary div {
-    font-size: 12px;
-    gap: 1rem;
+    gap: 1.4rem;
   }
-} */
+}
 
 /*
 SPACING SYSTEM (px)
